@@ -4,6 +4,8 @@ import Auth from '@/components/Auth.vue'
 import Register from '@/components/Register'
 import CustomerList from '@/components/CustomerList'
 import CustomerCreate from '@/components/CustomerCreate'
+import InvestmentList from '@/components/InvestmentList'
+import InvestmentCreate from '@/components/InvestmentCreate'
 
 const routes = [
   {
@@ -38,6 +40,26 @@ const routes = [
     path: '/customer-create/:pk',
     name: 'CustomerUpdate',
     component: CustomerCreate
+  },
+  {
+    path: '/investment-list',
+    name: 'InvestmentList',
+    component: InvestmentList
+  },
+  {
+    path: '/investment-list/:msg',
+    name: 'InvestmentUpdatedList',
+    component: InvestmentList
+  },
+  {
+    path: '/investment-create',
+    name: 'InvestmentCreate',
+    component: InvestmentCreate
+  },
+  {
+    path: '/investment-create/:pk',
+    name: 'InvestmentUpdate',
+    component: InvestmentCreate
   },
   {
     path: '/auth',

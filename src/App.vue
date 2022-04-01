@@ -7,6 +7,9 @@
         <li class="nav-item">
             <router-link :to="{name: 'CustomerList'}">Customers</router-link>
         </li>
+        <li class="nav-item">
+            <router-link :to="{name: 'InvestmentList'}">Investments</router-link>
+        </li>|
         <li class="nav-item" v-if="!authenticated" @click="login" >
             | <router-link :to="{name: 'Auth'}">Log in</router-link>
         </li>
@@ -33,6 +36,7 @@
             menu: [
                 { title: 'Home', url:"/"},
                 { title: 'Customers', url:"/customer-list" },
+                { title: 'Investments', url:"/investment-list" },
             ]
         }),
         mounted() {

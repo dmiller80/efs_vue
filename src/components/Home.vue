@@ -98,7 +98,7 @@
                     <h5 class="card-title">Investments</h5>
 
 
-                    <a @click="" class="btn btn-primary">View Details</a>
+                    <a @click="viewInvestments" class="btn btn-primary">View Details</a>
 
 
                   </div>
@@ -200,6 +200,9 @@ import router from '../router'
 
       },
 
+      viewInvestments() {
+        router.push('/investment-list');
+      },
 
 
 
