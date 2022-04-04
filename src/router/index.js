@@ -6,6 +6,8 @@ import CustomerList from '@/components/CustomerList'
 import CustomerCreate from '@/components/CustomerCreate'
 import InvestmentList from '@/components/InvestmentList'
 import InvestmentCreate from '@/components/InvestmentCreate'
+import StockList from '@/components/StockList'
+import StockCreate from '@/components/StockCreate'
 
 const routes = [
   {
@@ -60,6 +62,26 @@ const routes = [
     path: '/investment-create/:pk',
     name: 'InvestmentUpdate',
     component: InvestmentCreate
+  },
+  {
+    path: '/stock-list',
+    name: 'StockList',
+    component: StockList
+  },
+  {
+    path: '/stock-list/:msg',
+    name: 'StockUpdatedList',
+    component: StockList
+  },
+  {
+    path: '/stock-create',
+    name: 'StockCreate',
+    component: StockCreate
+  },
+  {
+    path: '/stock-create/:pk',
+    name: 'StockUpdate',
+    component: StockCreate
   },
   {
     path: '/auth',

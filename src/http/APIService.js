@@ -90,10 +90,52 @@ deleteInvestment(investment_Pk){
    return axios.delete(url, {headers: headers});
 }
 
+getStock(param_pk) {
+   const url = `${API_URL}/api/stocks/${param_pk}`;
+   let jwtToken = localStorage.getItem('token');
+   console.log(":::jwtToken:::::"+jwtToken);
+   const headers = {Authorization: `jwt ${jwtToken}`};
+   return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
+}
+
+
+ getStockList() {
+     const url = `${API_URL}/api/stocks`;
+     let jwtToken = localStorage.getItem('token');
+     console.log(":::jwtToken:::::" + jwtToken);
+     const headers = {Authorization: `jwt ${jwtToken}`};
+     return axios.get(url, {headers: headers});
+
+
+ }
+
+ addNewStock(stock) {
+    const url = `${API_URL}/api/stocks/`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.post(url, stock, {headers: headers});
+ }
+
+
+ updateStock(stock) {
+    const url = `${API_URL}/api/stocks/${stock.pk}`;
+    let jwtToken = localStorage.getItem('token');
+    const headers = {Authorization: `jwt ${jwtToken}`};
+    return axios.put(url, stock, {headers: headers});
+ }
+
+
+ deleteStock(stock_Pk){
+   const url = `${API_URL}/api/stocks/${stock_Pk}`;
+   let jwtToken = localStorage.getItem('token');
+   const headers = {Authorization: `jwt ${jwtToken}`};
+   return axios.delete(url, {headers: headers});
+ }
+
 
   authenticateLogin(credentials) {
     const url = `${API_URL}/auth/`;
-//      const url = `127.0.0.1:8000/auth/`;
+ //      const url = `127.0.0.1:8000/auth/`;
     return axios.post(url, credentials);
   }
 
@@ -101,6 +143,6 @@ deleteInvestment(investment_Pk){
     const url = `${API_URL}/register/`;
     credentials.customusername = credentials.username
     return axios.post(url, credentials);
-  }
+ }
 
 }
